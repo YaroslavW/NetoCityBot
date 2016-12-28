@@ -11,7 +11,7 @@ function getRandom($list) {
 
 function getLast($text) {
     $badLetters = ['ы', 'ь', 'й'];
-    $size = 2;
+    $size = 1;
     $i = -$size;
     
     do {
@@ -22,7 +22,7 @@ function getLast($text) {
 }
 
 function getFirst($text) {
-    return mb_substr(mb_strtolower($text, 'UTF-8'), 0, 2);
+    return mb_substr(mb_strtolower($text, 'UTF-8'), 0, 1);
 }
 
 function check($item, $list) {
@@ -41,7 +41,6 @@ try {
         
         session_id($chatId);
         session_name('chat');
-        session_save_path('./sess');
         session_start();
     }, function () {return true;});
     
